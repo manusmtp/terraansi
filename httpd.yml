@@ -1,0 +1,13 @@
+---
+- hosts: servers
+  become: yes
+  become_user: root
+
+  vars:
+    helloworld: Meow!
+
+  tasks:
+  - name: install the package
+    apt:
+      name: apache2 
+      state: latest
